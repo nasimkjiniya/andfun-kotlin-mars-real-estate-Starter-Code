@@ -22,18 +22,26 @@
     xmlns:tools="http://schemas.android.com/tools">
     
     <data>
-        
+
         <variable
-            name="viewModel"
-            type="com.example.android.marsrealestate.overview.OverviewViewModel" />
+            name="property"
+            type="com.example.android.marsrealestate.network.MarsProperty" />
     </data>
-    <ImageView
-        android:id="@+id/mars_image"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:padding="2dp"
-        app:imageUrl="@{viewModel.property.img_src}"
-        tools:src="@tools:sample/backgrounds/scenic"/>
+        android:layout_height="170dp">
+        <ImageView
+            android:id="@+id/mars_image"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:imageUrl="@{property.img_src}"
+            tools:src="@tools:sample/backgrounds/scenic"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
